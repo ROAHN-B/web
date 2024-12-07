@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Static Website</title>
+    <title>Rohan's Demo Web Page</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #eef2f3;
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
             transition: background-color 0.3s;
         }
         header {
-            background-color: #0056b3;
+            background-color: #007bff;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -24,53 +24,50 @@
             width: 100%;
             z-index: 1000;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         header.scrolled {
-            background-color: #00448c;
+            background-color: #0056b3;
         }
         header h1 {
             margin: 0;
-            font-size: 36px;
-            transition: transform 0.3s;
-        }
-        header.scrolled h1 {
-            transform: scale(1.05);
+            font-size: 40px;
+            font-weight: bold;
         }
         .container {
             width: 80%;
-            margin: 100px auto;
+            margin: 120px auto 60px;
             padding: 20px;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #00448c;
+            background-color: #0056b3;
             padding: 10px 0;
             position: fixed;
             width: 100%;
-            top: 60px;
+            top: 80px;
             z-index: 999;
-            transition: background-color 0.3s;
-        }
-        nav.scrolled {
-            background-color: #003366;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
-            transition: text-decoration 0.3s, color 0.3s;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
-            color: #ffcc00;
+            background-color: #ffcc00;
+            color: #333;
         }
         main {
             background-color: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
             transition: transform 0.3s;
         }
@@ -78,38 +75,26 @@
             transform: translateY(-5px);
         }
         h1, h2, h3, h4, h5, h6 {
-            color: #0056b3;
-            transition: color 0.3s;
-        }
-        p {
-            line-height: 1.6;
-            transition: opacity 0.3s;
+            color: #007bff;
         }
         footer {
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             background-color: #0056b3;
             color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
-            transition: background-color 0.3s;
-        }
-        footer.scrolled {
-            background-color: #00448c;
         }
         .sidebar {
-            background-color: #f1f1f1;
+            background-color: #f9f9f9;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-        .sidebar:hover {
-            transform: scale(1.02);
         }
         .sidebar h3 {
+            color: #0056b3;
             margin-top: 0;
         }
         .sidebar ul {
@@ -120,54 +105,28 @@
             margin: 10px 0;
         }
         .sidebar a {
-            color: #0056b3;
+            color: #007bff;
             text-decoration: none;
             transition: color 0.3s;
         }
         .sidebar a:hover {
             color: #00448c;
         }
-        .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .content:hover {
-            transform: translateY(-5px);
-        }
-        .content h2 {
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-        }
-        .content p {
-            margin: 20px 0;
-        }
         .content img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            margin: 20px 0;
-            transition: transform 0.3s;
-        }
-        .content img:hover {
-            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .content table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            transition: opacity 0.3s;
-        }
-        .content table:hover {
-            opacity: 0.9;
         }
         .content th, .content td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: left;
-            transition: background-color 0.3s;
         }
         .content th {
             background-color: #f1f1f1;
@@ -178,26 +137,8 @@
         .content tr:hover {
             background-color: #e0e0e0;
         }
-        .option-page {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-        .option-page:hover {
-            transform: scale(1.02);
-        }
-        .option-page h2 {
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-        }
-        .option-page p {
-            margin: 20px 0;
-        }
         .option-page button {
-            background-color: #0056b3;
+            background-color: #007bff;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -206,49 +147,34 @@
             transition: background-color 0.3s;
         }
         .option-page button:hover {
-            background-color: #00448c;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
+            background-color: #0056b3;
         }
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
             }
             nav a {
-                margin: 10px 0;
+                margin: 5px 0;
             }
             .container {
                 width: 95%;
-                margin-top: 150px;
             }
         }
     </style>
     <script>
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            const nav = document.querySelector('nav');
-            const footer = document.querySelector('footer');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
-                nav.classList.add('scrolled');
-                footer.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
-                nav.classList.remove('scrolled');
-                footer.classList.remove('scrolled');
             }
         });
     </script>
 </head>
 <body>
     <header>
-        <h1>Advanced Static Website</h1>
+        <h1>Rohan's Demo Web Page</h1>
     </header>
     <nav>
         <a href="#home">Home</a>
@@ -270,107 +196,41 @@
         </aside>
         <main class="content">
             <section id="home">
-                <h2>Welcome to Our Static Website</h2>
-                <p>This is a highly advanced static website designed to mimic the look and feel of Wikipedia, ensuring high availability, security, and cost-effective hosting on Microsoft Azure. Our platform is built to provide a seamless user experience with robust security measures and minimal costs.</p>
-                <img src="https://via.placeholder.com/800x400" alt="Website Banner">
-                <p>Experience the future of static websites with our cutting-edge technology and professional design. Trust us to bring your vision to life.</p>
+                <h2>Welcome to Rohan's Demo Web Page</h2>
+                <p>This page demonstrates a professional static website with elegant design and functionality, hosted on Azure for reliability and scalability.</p>
+                <img src="https://via.placeholder.com/800x400" alt="Welcome Banner">
             </section>
             <section id="about">
                 <h2>About Us</h2>
-                <p>We provide top-notch static website solutions leveraging the power of Microsoft Azure. Our focus is on delivering a seamless user experience with robust security measures and minimal costs. Our team of experts is dedicated to ensuring that your website not only looks great but also performs optimally.</p>
-                <p>Our services include:</p>
-                <ul>
-                    <li>Static website hosting on Azure Blob Storage</li>
-                    <li>CDN integration for fast content delivery</li>
-                    <li>SSL certificate management for secure connections</li>
-                    <li>Regular security audits and updates</li>
-                </ul>
-                <p>At our company, we pride ourselves on providing the highest level of service and support to our clients. We are committed to helping you achieve your goals and exceed your expectations.</p>
+                <p>We specialize in creating modern, scalable, and secure static websites hosted on Microsoft Azure. Perfect for all project sizes, ensuring performance and reliability.</p>
             </section>
             <section id="services">
                 <h2>Our Services</h2>
-                <h3>High Availability</h3>
-                <p>Our infrastructure is built to handle large volumes of traffic with minimal downtime. We use Azure's global network of data centers to ensure that your website is always available to your users, regardless of their location.</p>
-                <h3>Security</h3>
-                <p>We employ state-of-the-art security protocols to protect your data and ensure a safe browsing environment. Our services include SSL certificates, DDoS protection, and regular security audits to keep your website secure.</p>
-                <h3>Cost-Effective Hosting</h3>
-                <p>By utilizing Azure's scalable resources, we offer hosting solutions that are both efficient and budget-friendly. Our pricing is transparent, and we work closely with our clients to find the best solution for their needs.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Service</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Basic Hosting</td>
-                            <td>Includes static website hosting and SSL certificate</td>
-                            <td>$10/month</td>
-                        </tr>
-                        <tr>
-                            <td>Premium Hosting</td>
-                            <td>Includes all basic services plus CDN and DDoS protection</td>
-                            <td>$30/month</td>
-                        </tr>
-                        <tr>
-                            <td>Enterprise Hosting</td>
-                            <td>Includes premium services plus dedicated support and advanced analytics</td>
-                            <td>$100/month</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>High-quality hosting options with a focus on availability, security, and cost-efficiency.</p>
             </section>
             <section id="options">
                 <h2>Hosting Options</h2>
                 <div class="option-page">
                     <h3>Basic Hosting</h3>
-                    <p>Perfect for small projects and personal websites.</p>
-                    <ul>
-                        <li>Static website hosting</li>
-                        <li>SSL certificate</li>
-                    </ul>
-                    <button>Choose Basic Hosting</button>
-                </div>
-                <div class="option-page">
-                    <h3>Premium Hosting</h3>
-                    <p>Best for medium-sized businesses and organizations.</p>
-                    <ul>
-                        <li>All basic services</li>
-                        <li>CDN integration</li>
-                        <li>DDoS protection</li>
-                    </ul>
-                    <button>Choose Premium Hosting</button>
-                </div>
-                <div class="option-page">
-                    <h3>Enterprise Hosting</h3>
-                    <p>Designed for large enterprises and high-traffic websites.</p>
-                    <ul>
-                        <li>All premium services</li>
-                        <li>Dedicated support</li>
-                        <li>Advanced analytics</li>
-                    </ul>
-                    <button>Choose Enterprise Hosting</button>
+                    <p>Affordable hosting for small projects.</p>
+                    <button>Choose Basic</button>
                 </div>
             </section>
             <section id="contact">
                 <h2>Contact Us</h2>
-                <p>If you have any questions or need further information, feel free to reach out to us via email at <a href="mailto:info@example.com">info@example.com</a>. You can also contact us via phone at <a href="tel:+1234567890">(123) 456-7890</a>.</p>
                 <form>
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name" required><br><br>
                     <label for="email">Email:</label><br>
                     <input type="email" id="email" name="email" required><br><br>
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-                    <input type="submit" value="Submit">
+                    <textarea id="message" name="message" placeholder="Your message" required></textarea><br><br>
+                    <button type="submit">Submit</button>
                 </form>
             </section>
         </main>
     </div>
     <footer>
-        <p>&copy; 2023 Advanced Static Website. All rights reserved.</p>
+        <p>&copy; 2023 Rohan's Demo Web Page. All rights reserved.</p>
     </footer>
 </body>
 </html>
